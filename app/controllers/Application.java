@@ -27,15 +27,14 @@ public class Application extends Controller {
 		int county_progress = 0;
 		int total_county = counties.size();
 		for (Country county : counties) {
-			List<DataPiece> datas = county.getDatas();
-			if (datas != null && datas.size() > 10) {
-				county_progress++;
-				Result result = new Result();
-				result.setId("county_" + county.getId());
-				result.setName(county.getName());
-				result.setValue(county.getValue());
-				results.add(result);
-			}
+			if (county.getIsCralwed() != 1)
+				continue;
+			county_progress++;
+			Result result = new Result();
+			result.setId("county_" + county.getId());
+			result.setName(county.getName());
+			result.setValue(county.getValue());
+			results.add(result);
 		}
 
 		// msa的进度
@@ -43,16 +42,14 @@ public class Application extends Controller {
 		int msa_progress = 0;
 		int total_msa = msas.size();
 		for (MSA msa : msas) {
-			List<DataPiece> datas = msa.getDatas();
-			if (datas != null && datas.size() > 10) {
-				msa_progress++;
-
-				Result result = new Result();
-				result.setId("msa_" + msa.getId());
-				result.setName(msa.getName());
-				result.setValue(msa.getValue());
-				results.add(result);
-			}
+			if (msa.getIsCralwed() != 1)
+				continue;
+			msa_progress++;
+			Result result = new Result();
+			result.setId("msa_" + msa.getId());
+			result.setName(msa.getName());
+			result.setValue(msa.getValue());
+			results.add(result);
 		}
 
 		if (id.startsWith("msa_")) {
