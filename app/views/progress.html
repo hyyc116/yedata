@@ -139,7 +139,8 @@
 <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"
 	type="text/javascript" charset="${_response_encoding}"></script>
 <script>
-	$('#selected_zone').find("option[text='"+${msa.getName()}+"']").attr("selected",true);
+	
+	$('#selected_zone').val("${msa.getId()}");
 	var value = $('#selected_zone').val();
 	$('#select_form').attr('action', '/detail/' + value)
 	$('#selected_zone').change(function() {
