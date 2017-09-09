@@ -86,47 +86,47 @@
 				<td>${data.year}</td> 
 				#{list items:data.getBusinessall().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getBusinessresident().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getBusinessnonresident().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getBusinessnoncommercial().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getJobs().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getGained().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getLost().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getNetchange().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getSaleall().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getSalesperemployee().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				#{list items:data.getSalesperbusiness().getAttrs(),
 				as:'attr'}
-				<td><b>${attr.getAttr_value()}</b></td> 
+				<td>${attr.getAttr_value()}</td> 
 				#{/list}
 				
 			</tr>
@@ -139,7 +139,7 @@
 <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"
 	type="text/javascript" charset="${_response_encoding}"></script>
 <script>
-	$('#selected_zone').find("option[text='${msa.getName()}']").attr("selected",true);
+	$('#selected_zone').find("option[text='"+${msa.getName()}+"']").attr("selected",true);
 	var value = $('#selected_zone').val();
 	$('#select_form').attr('action', '/detail/' + value)
 	$('#selected_zone').change(function() {
