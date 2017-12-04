@@ -56,147 +56,147 @@ public class Application extends Controller {
 			results.add(result);
 		}
 
-		// 将已经抓取到的msa county的数据存在本地
-		List<MSA> msa_list = MSA.findAll();
-		List<String> lines = new ArrayList<String>();
-		for (MSA msa : msa_list) {
-			for (DataPiece data : msa.getDatas()) {
-				StringBuilder sb = new StringBuilder();
-				sb.append(msa.getState().getName());
-				sb.append(",");
-				sb.append(msa.getName());
-				sb.append(",");
-				int year = data.getYear();
-				sb.append(year + ",");
-				try {
-					for (Attr attr : data.getBusinessall().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessresident().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessnonresident().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessnoncommercial().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getJobs().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getGained().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getLost().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getNetchange().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSaleall().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSalesperemployee().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-				} catch (Exception e) {
-					continue;
-				}
-				String s = sb.toString();
-				lines.add(s.substring(0, s.length() - 1));
-			}
-		}
-		try {
-			FileUtils.writeLines(new File("MSA.txt"), lines);
-			System.out.println("File Saved to MSA.txt.");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		// 将已经抓取到的msa county的数据存在本地
-		List<Country> ct_list = Country.findAll();
-		List<String> ct_lines = new ArrayList<String>();
-		for (Country msa : ct_list) {
-			for (DataPiece data : msa.getDatas()) {
-				StringBuilder sb = new StringBuilder();
-				sb.append(msa.getState().getName());
-				sb.append(",");
-				sb.append(msa.getName());
-				sb.append(",");
-				int year = data.getYear();
-				sb.append(year + ",");
-				try {
-					for (Attr attr : data.getBusinessall().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessresident().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessnonresident().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getBusinessnoncommercial().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getJobs().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getGained().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getLost().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getNetchange().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSaleall().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSalesperemployee().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
-						String v = attr.getAttr_value();
-						sb.append(v + ",");
-					}
-				} catch (Exception e) {
-					continue;
-				}
-				String s = sb.toString();
-				ct_lines.add(s.substring(0, s.length() - 1));
-			}
-		}
-		try {
-			FileUtils.writeLines(new File("County.txt"), ct_lines);
-			System.out.println("File Saved to County.txt.");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		// 将已经抓取到的msa county的数据存在本地
+//		List<MSA> msa_list = MSA.findAll();
+//		List<String> lines = new ArrayList<String>();
+//		for (MSA msa : msa_list) {
+//			for (DataPiece data : msa.getDatas()) {
+//				StringBuilder sb = new StringBuilder();
+//				sb.append(msa.getState().getName());
+//				sb.append(",");
+//				sb.append(msa.getName());
+//				sb.append(",");
+//				int year = data.getYear();
+//				sb.append(year + ",");
+//				try {
+//					for (Attr attr : data.getBusinessall().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessresident().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessnonresident().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessnoncommercial().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getJobs().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getGained().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getLost().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getNetchange().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSaleall().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSalesperemployee().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//				} catch (Exception e) {
+//					continue;
+//				}
+//				String s = sb.toString();
+//				lines.add(s.substring(0, s.length() - 1));
+//			}
+//		}
+//		try {
+//			FileUtils.writeLines(new File("MSA.txt"), lines);
+//			System.out.println("File Saved to MSA.txt.");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		// 将已经抓取到的msa county的数据存在本地
+//		List<Country> ct_list = Country.findAll();
+//		List<String> ct_lines = new ArrayList<String>();
+//		for (Country msa : ct_list) {
+//			for (DataPiece data : msa.getDatas()) {
+//				StringBuilder sb = new StringBuilder();
+//				sb.append(msa.getState().getName());
+//				sb.append(",");
+//				sb.append(msa.getName());
+//				sb.append(",");
+//				int year = data.getYear();
+//				sb.append(year + ",");
+//				try {
+//					for (Attr attr : data.getBusinessall().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessresident().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessnonresident().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getBusinessnoncommercial().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getJobs().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getGained().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getLost().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getNetchange().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSaleall().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSalesperemployee().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
+//						String v = attr.getAttr_value();
+//						sb.append(v + ",");
+//					}
+//				} catch (Exception e) {
+//					continue;
+//				}
+//				String s = sb.toString();
+//				ct_lines.add(s.substring(0, s.length() - 1));
+//			}
+//		}
+//		try {
+//			FileUtils.writeLines(new File("County.txt"), ct_lines);
+//			System.out.println("File Saved to County.txt.");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		if (id.startsWith("msa_")) {
 			MSA msa = MSA.findById(Long.parseLong(id.replace("msa_", "").replace("?", "")));
