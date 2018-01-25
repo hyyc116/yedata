@@ -187,7 +187,16 @@ public class Application extends Controller {
 		for (Country msa : ct_list) {
 			index++;
 			if (index % 100 == 0) {
-				System.out.println("progress:"+index);
+
+				System.out.println("progress:" + index);
+				try {
+					FileUtils.writeLines(new File("County.txt"), ct_lines, true);
+					System.out.println("File Saved to County.txt.");
+					ct_lines = null;
+					ct_lines = new ArrayList<String>();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			for (DataPiece data : msa.getDatas()) {
 				StringBuilder sb = new StringBuilder();
@@ -274,7 +283,7 @@ public class Application extends Controller {
 					}
 					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
 						String v = attr.getAttr_value();
-						sb.append("BUSINESSES_SALES_PER_BUSINESS");
+						sb.append("BUSINESSES_SALES_PER_BUSINESS:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
@@ -287,7 +296,7 @@ public class Application extends Controller {
 			}
 		}
 		try {
-			FileUtils.writeLines(new File("County.txt"), ct_lines);
+			FileUtils.writeLines(new File("County.txt"), ct_lines, true);
 			System.out.println("File Saved to County.txt.");
 		} catch (IOException e) {
 			e.printStackTrace();
