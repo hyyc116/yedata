@@ -204,66 +204,77 @@ public class Application extends Controller {
 				try {
 					for (Attr attr : data.getBusinessall().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_ALL:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getBusinessresident().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_RESIDENT:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getBusinessnonresident().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_NONE_RESIDENT:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getBusinessnoncommercial().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_NONE_COMMERCIAL:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getJobs().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_JOBS:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getGained().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_GAINED:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getLost().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_LOST:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getNetchange().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_NET_CHANGE:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getSaleall().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_SALE_ALL:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getSalesperemployee().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_SALES_PER_EMPLOYEE:");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
 					}
 					for (Attr attr : data.getSalesperbusiness().getAttrs()) {
 						String v = attr.getAttr_value();
+						sb.append("BUSINESSES_SALES_PER_BUSINESS");
 						sb.append(attr.getAttr_name());
 						sb.append(":" + v);
 						sb.append("===");
