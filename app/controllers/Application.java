@@ -250,6 +250,9 @@ public class Application extends Controller {
 					e.printStackTrace();
 				}
 			}
+			if(msa.getDatas().size()==0){
+				System.out.println(msa.getName()+"\t"+msa.getValue());
+			}
 			for (DataPiece data : msa.getDatas()) {
 				StringBuilder sb = new StringBuilder();
 				sb.append("State:");
